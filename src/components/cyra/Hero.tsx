@@ -2,6 +2,7 @@ import { ArrowRight, Code2, Cpu, Radio, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TechVisual } from "./TechVisual";
 
+
 const technologies = [
   { label: "Software", Icon: Code2 },
   { label: "Hardware", Icon: Cpu },
