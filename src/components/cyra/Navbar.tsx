@@ -50,8 +50,9 @@ export function Navbar() {
           {open ? <X /> : <Menu />}
         </Button>
       </nav>
-      <div className={`mobile-menu lg:hidden ${open ? "mobile-menu-open" : ""}`} aria-hidden={!open}>
-        <div className="site-container flex flex-col gap-1 pb-6 pt-2">
+      <div className={`grid overflow-hidden bg-background transition-[grid-template-rows,opacity] duration-300 lg:hidden ${open ? "grid-rows-[1fr] border-b border-border opacity-100" : "grid-rows-[0fr] opacity-0"}`} aria-hidden={!open}>
+        <div className="min-h-0">
+          <div className="site-container flex flex-col gap-1 pb-6 pt-2">
           {navItems.map((item) => (
             <a key={item.href} href={item.href} className="mobile-nav-link" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
               {item.label}
@@ -60,6 +61,7 @@ export function Navbar() {
           <Button asChild variant="magenta" size="lg" className="mt-3 w-full">
             <a href="#contact" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>Nous contacter <ArrowRight /></a>
           </Button>
+          </div>
         </div>
       </div>
     </header>
