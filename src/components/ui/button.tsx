@@ -5,27 +5,31 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
+        cta: "rounded-full bg-brand-magenta text-primary-foreground shadow-cta hover:bg-brand-magenta/90",
+        filter: "rounded-full border border-border bg-background text-muted-foreground hover:border-primary/35 hover:text-primary",
+        filterActive: "rounded-full bg-primary text-primary-foreground shadow-filter hover:bg-primary/90",
+        pagination: "rounded-full border border-border bg-background text-muted-foreground hover:border-primary hover:text-primary",
+        paginationActive: "rounded-full bg-primary text-primary-foreground shadow-filter hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
           "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground shadow-brand hover:-translate-y-0.5 hover:bg-primary-hover",
-        heroOutline: "border border-primary bg-background text-primary hover:-translate-y-0.5 hover:bg-primary-soft",
-        magenta: "bg-accent text-accent-foreground shadow-accent hover:-translate-y-0.5 hover:bg-accent-hover",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
-        xl: "h-13 px-7 text-sm",
+        iconSm: "h-9 w-9 p-0",
+        pill: "h-11 px-6 text-xs font-bold",
+        filter: "h-10 shrink-0 px-5 text-xs font-semibold",
       },
     },
     defaultVariants: {
